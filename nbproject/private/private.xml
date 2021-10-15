@@ -5,10 +5,9 @@
         <group>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/index.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/controllers/UsuarioController.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-tienda/.htaccess</file>
-            <file>file:/C:/xampp/htdocs/proyecto-tienda/views/layout/header.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-tienda/config/parameters.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-tienda/controllers/ErrorController.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-tienda/config/db.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-tienda/helpers/utils.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-tienda/models/usuario.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/views/usuario/registro.php</file>
         </group>
     </open-files>
