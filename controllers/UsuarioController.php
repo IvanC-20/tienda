@@ -1,6 +1,7 @@
 <?php
 require_once 'models/usuario.php';
 
+
 class usuarioController{
     
     public function index(){
@@ -22,6 +23,9 @@ class usuarioController{
            // Validar campo nombre
             if (!empty($nombre) && !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre)){
                 $nombre_validado = true;
+            }elseif(empty ($nombre)){
+                $nombre_validado = false;
+                $errores['nombre']= "Complete este campo";
             }else{
                 $nombre_validado = false;
                 $errores['nombre'] = "El nombre no es válido"; 
@@ -32,6 +36,9 @@ class usuarioController{
             // Validar campo apellidos
             if (!empty($apellidos) && !is_numeric($apellidos) && !preg_match("/[0-9]/", $apellidos)){
                 $apellidos_validado = true;
+            }elseif(empty ($apellidos)){
+                $apellidos_validado = false;
+                $errores['apellidos']= "Complete este campo";
             }else{
                 $apellidos_validado = false;
                 $errores['apellidos'] = "Los apellidos no son válidos"; 
@@ -42,6 +49,9 @@ class usuarioController{
 
             if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)){
                 $email_validado = true;
+            }elseif(empty ($email)){
+                $email_validado = false;
+                $errores['email']= "Complete este campo";
             }else{
                 $email_validado = false;
                 $errores['email'] = "El email no es válido"; 
@@ -54,11 +64,11 @@ class usuarioController{
                 $password_validado = true;
             }else{
                 $password_validado = false;
-                $errores['password'] = "Completar el campo contraseña"; 
+                $errores['password'] = "Complete este campo"; 
             }
          
            
-           if($nombre_validado && $apellidos_validados && $email_validado && $password_validado){
+           if($nombre_validado && $apellidos_validado && $email_validado && $password_validado){
                     $usuario = new Usuario();
                     $usuario->setNombre($nombre);
                     $usuario->setApellidos($apellidos);
@@ -69,13 +79,18 @@ class usuarioController{
                     if ($save){
                         $_SESSION['register'] = 'completed';
                     }else{
-                        $_SESSION['register'] = 'failed';
+                         $_SESSION['errores']= $errores;
+                        //$_SESSION['errores'] ['general'] = "Error al insertar usuario!";
+                        //$_SESSION['register'] = 'failed';
                     }
             }else{
-                    $_SESSION['register'] = 'failed';
+                        $_SESSION['errores']= $errores;
+                        //$_SESSION['errores'] ['general'] = "Error al insertar usuario!";
+                        //$_SESSION['register'] = 'failed';
             }
        }else {
-              $_SESSION['register'] = 'failed';  
+                 $_SESSION['errores'] ['general'] = "Error al insertar usuario!";   
+                 //$_SESSION['register'] = 'failed';  
        }
         header("Location:".base_url."usuario/registro");
     }
