@@ -5,7 +5,7 @@
         <group>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/controllers/UsuarioController.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/helpers/utils.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-tienda/models/usuario.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-tienda/views/layout/sidebar.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/views/usuario/registro.php</file>
         </group>
     </open-files>

@@ -216,6 +216,12 @@ button, .button{
     text-decoration: none;
 }
 
+.button-small{
+    width: 120px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 /* Alert errores */
 
 .alerta{
@@ -235,6 +241,16 @@ button, .button{
     
 }
 
+table{
+    width: 100%;
+    border: 1px solid #555;
+    text-align: center;
+}
+
+td{
+    border-top: 1px solid #ccc;
+    padding: 2px;
+}
 
 /* Principal */
 
