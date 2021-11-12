@@ -14,7 +14,7 @@ class Categoria{
     }
 
     function getNombre() {
-        return $this->nombre;
+        return $this->nombre; 
     }
 
     function setId($id): void {
@@ -22,12 +22,24 @@ class Categoria{
     }
 
     function setNombre($nombre): void {
-        $this->nombre = $nombre;
+        $this->nombre = $this->db->real_escape_string($nombre);
     }
 
     public function getAll(){
-        $categorias = $this->db->query("SELECT * FROM categorias;");
+        $categorias = $this->db->query("SELECT * FROM categorias ORDER BY id DESC;");
         return $categorias;
+    }
+    
+    public function save(){
+        $sql = "INSERT INTO categorias VALUES (null, '{$this->getNombre()}')";
+            
+        $save = $this->db->query($sql);
+      
+      $result = false;
+      if($save){
+          $result = true;
+      } 
+      return $result;
     }
 }
 
