@@ -157,10 +157,16 @@ a:hover{
 
 /* Formularios */
 
+form{
+    width: 60%;
+}
+
 label,
 input[type="text"],
 input[type="password"],
-input[type="email"]{
+input[type="email"],
+input[type="number"],
+select, textarea{
     display: block;
     width: 95%;
     margin-top: 2px;
@@ -177,7 +183,8 @@ button{
 input[type="text"],
 input[type="password"],
 input[type="email"],
-select{
+input[type="number"],
+select, textarea{
     display: block;
     border: 1px solid #C9C9C9;
     box-shadow: 0px 0px 2px #ccc inset;
@@ -245,6 +252,7 @@ table{
     width: 100%;
     border: 1px solid #555;
     text-align: center;
+    margin-top: 20px;
 }
 
 td{

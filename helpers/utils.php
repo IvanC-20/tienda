@@ -45,5 +45,12 @@ class Utils{
             }
     }
     
+    public static function showCategorias(){
+        require_once 'models/categoria.php';
+        $categoria = new Categoria();
+        $categorias = $categoria->getAll();
+        return $categorias;
+    }
+    
     
 }//fin clase Utils
