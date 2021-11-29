@@ -39,7 +39,22 @@ class productoController{
                         $producto->setPrecio($precio);
                         $producto->setStock($stock);
                         $producto->setCategoria_id($categoria);
-
+                        
+                        //Guardar la imagen
+                        
+                        $file = $_FILES['imagen']; //imagen es el nombre que le dimos en el form
+                        $filename = $file['name'];
+                        $mimetype = $file['type'];
+                        
+                        if($mimetype == "image/jpg" || $mimetype == "image/jpeg" || $mimetype == "image/gif" || $mimetype == "image/png"){
+                            if(!is_dir('uploads/images')){
+                                mkdir('uploads/images', 0777, true);
+                            }
+                            
+                            move_uploaded_file($file['tmp_name'], 'uploads/images/'.$filename);
+                            $producto->setImagen($filename);
+                        }
+                        
                         $save = $producto->save();
 
                         if($save){
@@ -57,5 +72,7 @@ class productoController{
         
         header('Location:'.base_url.'producto/gestion');
     }
+    
+       
 }//fin clase productoController
 
