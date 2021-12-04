@@ -12,6 +12,15 @@
         
 <?php Utils::deleteSession('producto'); ?>    
         
+
+<?php if (isset($_SESSION['delete']) && $_SESSION['delete'] == 'completed'):?>
+        <strong class="alerta">El producto se a eliminado correctamente</strong>
+<?php elseif(isset($_SESSION['delete']) && $_SESSION['delete'] == 'failed'):?>
+        <strong class="alerta-error">El producto no se ha podido eliminar</strong>     
+<?php endif; ?>
+        
+<?php Utils::deleteSession('delete'); ?>         
+        
 <table>
     <tr>
         <th>Id</th>
@@ -22,6 +31,7 @@
         <th>Oferta</th>
         <th>Fecha</th>
         <th>Imagen</th>
+        <th>Acciones</th>
         
     </tr>
 <?php while($prod = $productos->fetch_object()): ?>
@@ -34,6 +44,11 @@
         <td><?= $prod->oferta?></td>
         <td><?= $prod->fecha?></td>
         <td><?= $prod->imagen?></td>
+        <td>
+            <!-- ? sirve para pasar el 1er param get aqui usamos & xq vamos a pasar un 3er param -->
+            <a href="<?=base_url?>producto/editar&id=<?=$prod->id?>" class="button button-gestion">Editar</a>
+            <a href="<?=base_url?>producto/borrar&id=<?=$prod->id?>" class="button button-red">Eliminar</a>
+        </td>
     </tr>
     
  <?php endwhile; ?>   

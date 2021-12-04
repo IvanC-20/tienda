@@ -221,12 +221,26 @@ button, .button{
 .button{
     background: #0CA20F;
     text-decoration: none;
+    color: white !important;
 }
 
 .button-small{
     width: 120px;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.button-gestion{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: blue;  
+}
+
+.button-red{
+    background: red;
+    border: 1px solid orange;
+    margin-bottom: 10px;
+    
 }
 
 /* Alert errores */
