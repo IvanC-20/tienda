@@ -5,6 +5,8 @@ require_once 'models/producto.php';
 class productoController{
     
     public function index(){
+        $producto = new Producto();
+        $productos = $producto->getRandom(6);
         require_once 'views/producto/destacados.php';
     }
     
@@ -41,7 +43,7 @@ class productoController{
                         $producto->setCategoria_id($categoria);
                         
                         //Guardar la imagen
-                        
+                      if(isset($_FILES['imagen'])){ 
                         $file = $_FILES['imagen']; //imagen es el nombre que le dimos en el form
                         $filename = $file['name'];
                         $mimetype = $file['type'];
@@ -54,9 +56,17 @@ class productoController{
                             move_uploaded_file($file['tmp_name'], 'uploads/images/'.$filename);
                             $producto->setImagen($filename);
                         }
+                      }  
+                      
+                      if(isset($_GET['id'])){
+                            $id = $_GET['id'];
+                            $producto->setId($id);
+                            $save = $producto->edit();
                         
-                        $save = $producto->save();
-
+                      }else{
+                            $save = $producto->save();
+                      }
+                      
                         if($save){
                             $_SESSION['producto'] = "complete";
                         }else{

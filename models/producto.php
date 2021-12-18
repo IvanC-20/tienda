@@ -99,12 +99,36 @@ class Producto{
         return $producto->fetch_object();        
     }
     
+    public function getRandom($limit){
+        $productos = $this->db->query("SELECT * FROM productos ORDER BY RAND() LIMIT $limit");
+        return $productos;
+    }
+    
     public function save() {
         $sql = "INSERT INTO productos VALUES (null, '{$this->getCategoria_id()}','{$this->getNombre()}', "
                 . "'{$this->getDescripcion()}', '{$this->getPrecio()}', '{$this->getStock()}', null, CURDATE(), '{$this->getImagen()}' );";
                 
         $save = $this->db->query($sql);
         
+        $result = false;
+        if($save){
+            $result = true;
+        }
+        return $result;
+    }
+    
+    public function edit() {
+        $sql = "UPDATE productos SET categoria_id = {$this->getCategoria_id()}, nombre ='{$this->getNombre()}', "
+                . "descripcion = '{$this->getDescripcion()}', precio = {$this->getPrecio()}, stock = {$this->getStock()}";
+                
+             if($this->getImagen() != null){   
+                $sql.= ", imagen = '{$this->getImagen()}'";
+                    }
+        $sql.= " WHERE id = {$this->getId()};" ;
+        
+                
+        $save = $this->db->query($sql);
+     
         $result = false;
         if($save){
             $result = true;
