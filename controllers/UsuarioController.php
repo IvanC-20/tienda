@@ -113,11 +113,11 @@ class usuarioController{
                }
            }else{
                $_SESSION['error_login'] = "Identificación fallida!";
+              
            }
             //crear sesion
         }
-        
-        header("Location:".base_url);
+                header('Location:'.base_url);
     }
     
     public function logout(){

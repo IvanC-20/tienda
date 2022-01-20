@@ -23,6 +23,18 @@ class productoController{
         require_once 'views/producto/cargar.php';
     }
     
+    public function ver(){
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+                        
+            $producto = new Producto();
+            $producto->setId($id);
+            $prod = $producto->getOne();
+            
+            require_once 'views/producto/ver.php';
+        }   
+    }
+    
     public function save(){
         Utils::isAdmin();
         

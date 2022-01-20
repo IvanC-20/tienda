@@ -94,6 +94,15 @@ class Producto{
         return $productos;        
     }
     
+    public function getAllCategory(){
+        $sql  = "SELECT p.*, c.nombre AS cat_nombre FROM productos p ";
+        $sql .= "INNER JOIN categorias c ON p.categoria_id = c.id ";
+        $sql .= "WHERE p.categoria_id = {$this->getCategoria_id()} ";
+        $sql .= "ORDER BY id DESC; ";
+        $productos = $this->db->query($sql);
+        return $productos;
+    }
+    
       public function getOne(){
         $producto = $this->db->query("SELECT * FROM productos WHERE id = {$this->getId()}");
         return $producto->fetch_object();        

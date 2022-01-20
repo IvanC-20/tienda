@@ -13,6 +13,10 @@ class Utils{
     if(isset($errores[$campo]) && !empty($campo)){
         $alerta = "<div class = 'alerta alerta-error'>".$errores[$campo]."</div>";
     }
+    
+    if( isset($_SESSION['error_login'])){
+        $alerta = "<div class = 'alerta alerta-error'>".$_SESSION['error_login']."</div>";
+    }
     return $alerta;
 }
 
@@ -34,6 +38,12 @@ class Utils{
             $_SESSION['completado'] = null;
             $borrado = true;
         }
+        
+        if(isset( $_SESSION['error_login'])){
+             $_SESSION['error_login'] = null;
+            $borrado = true;
+        }
+        
         return $borrado;
     }
 
