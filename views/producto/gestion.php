@@ -43,7 +43,11 @@
         <td><?= $prod->stock?></td>
         <td><?= $prod->oferta?></td>
         <td><?= $prod->fecha?></td>
-        <td><?= $prod->imagen?></td>
+        <td><?php if ($prod->imagen != null): ?>
+            <img src="<?= base_url ?>uploads/images/<?= $prod->imagen ?>" class="img_carrito"/>
+                <?php else: ?>
+                    <img src="<?= base_url ?>assets/img/camiseta.png" class="img_carrito"/>
+                <?php endif; ?> 
         <td>
             <!-- ? sirve para pasar el 1er param get aqui usamos & xq vamos a pasar un 3er param -->
             <a href="<?=base_url?>producto/editar&id=<?=$prod->id?>" class="button button-gestion">Editar</a>

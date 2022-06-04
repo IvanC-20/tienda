@@ -6,4 +6,7 @@ class pedidoController{
         echo 'controlador pedido, accion index';
     }
     
+    public function functionName($param) {
+        
+    }
 }

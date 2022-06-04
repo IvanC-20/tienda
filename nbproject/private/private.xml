@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/proyecto-tienda/models/categoria.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/assets/css/styles.css</file>
-            <file>file:/C:/xampp/htdocs/proyecto-tienda/controllers/ProductoController.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-tienda/views/producto/destacados.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-tienda/controllers/CarritoController.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-tienda/controllers/PedidoController.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/views/producto/ver.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-tienda/models/producto.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-tienda/views/categoria/ver.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-tienda/views/carrito/index.php</file>
         </group>
     </open-files>
 </project-private>

@@ -1,22 +1,25 @@
-<?php if(isset($prod)): ?>
+<?php if (isset($prod)): ?>
 
-<h1><?=$prod->nombre?></h1>
- 
-    <div class="detail-product">
-        <a href="<?= base_url ?>producto/ver&id=<?= $prod->id ?>">
-            <?php if ($prod->imagen != null): ?>
-                <img src="<?= base_url ?>uploads/images/<?= $prod->imagen ?>"/>
-            <?php else: ?>
-                <img src="<?= base_url ?>assets/img/camiseta.png"/>
-            <?php endif; ?>    
+    <h1><?= $prod->nombre ?></h1>
+
+    <div id="detail-product">
+        <div class="image">
+            
+                <?php if ($prod->imagen != null): ?>
+                    <img src="<?= base_url ?>uploads/images/<?= $prod->imagen ?>" />
+                <?php else: ?>
+                    <img src="<?= base_url ?>assets/img/camiseta.png"/>
+                <?php endif; ?>  
+        </div>
+        <div class="data">
             <h2><?= $prod->nombre ?></h2>
-        </a>
-        <p><?= $prod->descripcion ?></p>
-        <p><?= $prod->precio ?></p>
-        <a href="#" class="button" >Comprar</a>
+            <p class="description"><?= $prod->descripcion ?></p>
+            <p class="price">$ <?= $prod->precio ?></p>
+            <a href="<?= base_url ?>carrito/add&id=<?=$prod->id?>" class="button" >Comprar</a>
+        </div>
     </div>
 
 <?php else: ?>
-        <h1>El producto no existe!</h1>
+    <h1>El producto no existe!</h1>
 <?php endif; ?>
  
