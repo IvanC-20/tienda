@@ -400,3 +400,22 @@ td{
     background: #222222;
     border-top: 4px solid #01B1EA;
 }
+
+/* Carrito */
+
+.total-carrito{
+    width: 295px;
+    float: right;
+    display: block;
+}
+
+.total-carrito h3{
+    float: left;
+}
+
+.button-pedido{
+    float: right;
+    width: 100px;
+    text-align: center;
+    margin-top: 15px;
+}    
