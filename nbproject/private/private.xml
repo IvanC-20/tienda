@@ -5,9 +5,11 @@
         <group>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/controllers/ProductoController.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/controllers/PedidoController.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-tienda/models/pedido.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/helpers/utils.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/views/carrito/index.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/views/pedido/hacer.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-tienda/models/producto.php</file>
         </group>
     </open-files>
 </project-private>
