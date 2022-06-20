@@ -103,6 +103,26 @@ class Pedido{
         return $producto->fetch_object();        
     }
     
+        public function getOneByUser(){
+        $sql = "SELECT id, coste FROM pedidos "
+                ."WHERE usuario_id = {$this->getUsuario_id()} ORDER BY id DESC LIMIT 1";    
+        $pedido = $this->db->query($sql);
+        return $pedido->fetch_object();        
+        }
+        
+        public function getProductosByPedido($id) {
+           // $sql = "SELECT * FROM productos WHERE id IN "
+           //        ."(SELECT producto_id FROM lineas_pedidos WHERE pedido_id = {$id})";
+                   
+            $sql = "SELECT pr.*, lp.unidades FROM productos pr "
+                   ."INNER JOIN lineas_pedidos lp ON pr.id = lp.producto_id "
+                   ."WHERE lp.pedido_id = {$id}"; 
+                   
+         $productos = $this->db->query($sql);
+         return $productos;
+            
+        }
+    
  
         public function save() {
         $sql = "INSERT INTO pedidos VALUES (null, '{$this->getUsuario_id()}','{$this->getProvincia()}', "
@@ -139,3 +159,4 @@ class Pedido{
       
 }
 
+    
