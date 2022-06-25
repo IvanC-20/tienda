@@ -61,8 +61,18 @@ class pedidoController{
             $productos = $pedido_productos->getProductosByPedido($pedido->id);
              
         }
-        require_once 'views/pedido/confirmado.php';
-        
-        
-    }
-}
+        require_once 'views/pedido/confirmado.php';    
+     }
+     
+     public function misPedidos() {
+         Utils::isUser();
+         $usuario_id = $_SESSION['identity']->id;
+         $pedido = new Pedido();
+         $pedido->setUsuario_id($usuario_id);
+         $pedidos = $pedido->getAllByUser();
+         require_once 'views/pedido/misPedidos.php';
+         
+     }
+     
+    
+}    
