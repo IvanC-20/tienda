@@ -74,5 +74,32 @@ class pedidoController{
          
      }
      
-    
+     public function detallePedido() {
+         Utils::isUser();
+         if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            
+            //sacar el pedido
+            $pedido = new Pedido();
+            $pedido->setId($id);
+            $pedido = $pedido->getOnePedidoById();
+            
+            //sacar los productos
+            $pedido_productos = new Pedido();
+            $productos = $pedido_productos->getProductosByPedido($pedido->id);
+            require_once 'views/pedido/detalle.php';
+         }else{
+             header("Location:".base_url."pedido/misPedidos");
+         }   
+        
+     }
+     
+     public function gestion() {
+         Utils::isAdmin();
+         $gestion = true;
+         $pedido = new Pedido();
+         $pedidos = $pedido->getAll(); 
+         require_once 'views/pedido/misPedidos.php';
+         
+     }
 }    
