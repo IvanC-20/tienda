@@ -86,4 +86,18 @@ class Utils{
         return $stats;
     }
     
+    public static function showStatus($status) {
+        $estado = 'Pendiente';
+        if($status == 'confirm'){
+            $estado='Pendiente';
+        }elseif($status == 'preparated'){
+            $estado = 'En preparación';
+        }elseif($status == 'ready'){
+            $estado = 'Preparado para enviar';
+        }elseif($status == 'sended'){
+            $estado = 'Enviado';
+        }
+        return $estado;
+    }
+    
 }//fin clase Utils

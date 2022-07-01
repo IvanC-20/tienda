@@ -7,7 +7,7 @@
             <file>file:/C:/xampp/htdocs/proyecto-tienda/models/pedido.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/controllers/PedidoController.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/views/pedido/confirmado.php</file>
-            <file>file:/C:/xampp/htdocs/proyecto-tienda/views/layout/sidebar.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-tienda/helpers/utils.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/views/pedido/misPedidos.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/models/producto.php</file>
         </group>

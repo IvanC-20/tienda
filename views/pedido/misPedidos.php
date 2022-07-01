@@ -19,7 +19,7 @@
         <td><a href="<?=base_url?>pedido/detallePedido&id=<?=$ped->id?>" ><?=$ped->id?></a></td>
         <td><?=$ped->usuario_id?></td>
         <td><?=$ped->coste?></td>
-        <td><?=$ped->estado?></td>
+        <td><?= Utils::showStatus($ped->estado)?></td>
         <td><?=$ped->fecha?></td>
         <td><?=$ped->hora?></td>
     </tr>    

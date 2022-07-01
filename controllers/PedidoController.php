@@ -102,4 +102,23 @@ class pedidoController{
          require_once 'views/pedido/misPedidos.php';
          
      }
+     
+     public function estado() {
+         Utils::isAdmin();
+         if(isset($_POST['pedido_id']) && isset($_POST['estado'] )){
+             //Recoger datos form
+             $id = $_POST['pedido_id'];
+             $estado = $_POST['estado'];
+             //Update pedido
+             $pedido = new Pedido();
+             $pedido->setId($id);
+             $pedido->setEstado($estado);
+             $pedido->updateOne();
+             
+             header('Location:'.base_url.'pedido/detallePedido&id='.$id);
+         }else{
+             header('Location:'.base_url);
+         }
+         
+     }
 }    

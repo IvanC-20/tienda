@@ -169,6 +169,20 @@ class Pedido{
         return $result;        
         
     }
+    
+    public function updateOne() {
+         $sql = "UPDATE pedidos SET estado = '{$this->getEstado()}'"
+                ." WHERE id = {$this->getId()};" ;
+        
+                
+        $save = $this->db->query($sql);
+     
+        $result = false;
+        if($save){
+            $result = true;
+        }
+        return $result;
+    }
       
 }
 
