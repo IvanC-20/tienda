@@ -440,3 +440,18 @@ td{
     margin: 0px auto;
     text-align: center;
 }
+
+
+.updown-unidades{
+    width: 80px;
+    margin: 0px auto;
+}
+
+.updown-unidades .button{
+    display: block;
+    width: 20px;
+    float: left;
+    padding: 2px;
+    margin-right: 5px;
+    margin: 7px;
+}

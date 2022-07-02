@@ -116,6 +116,14 @@ class Pedido{
         return $pedido->fetch_object();        
         }
         
+        public function getDataUserByPedido($id){
+        $sql = "SELECT * FROM usuarios u "
+               ."INNER JOIN pedidos p ON u.id = p.usuario_id " 
+               ."WHERE p.id = {$id}";    
+        $usuario = $this->db->query($sql);
+        return $usuario->fetch_object();        
+        }
+        
         public function getOnePedidoById(){
         $sql = "SELECT * FROM pedidos "
                ."WHERE id = {$this->getId()}";    

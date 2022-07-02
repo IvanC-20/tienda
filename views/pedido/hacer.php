@@ -1,8 +1,9 @@
 <?php if (isset($_SESSION['identity'])): ?>
     <h1>Hacer pedido</h1>
     <a href="<?= base_url ?>carrito/index">Volver al pedido</a>
+    </br></br>
     
-    <H3>Dirección para el envío:</H3>
+    <h3>Dirección para el envío:</h3>
     <form action="<?=base_url?>pedido/add" method="POST">
         
         <label for="provincia" >Provincia:</label>

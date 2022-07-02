@@ -5,7 +5,7 @@
        Tu pedido ha sido guardado con éxito, una vez realices el pago a la cuenta 
        AA45638256/7 por el costo total del pedido será procesado y enviado.
     </p>
-    
+    </br>
     <?php if(isset($pedido)) : ?>
     <h3>Datos del pedido: </h3>
     

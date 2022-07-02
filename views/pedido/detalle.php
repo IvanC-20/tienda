@@ -15,16 +15,21 @@
         </form>
         
     <?php endif; ?>
-
+        
+     </br>    
+    <h3>Datos del Usuario</h3>
+    Nombre: <?= $user->nombre ?> </br>
+    Apellidos: <?= $user->apellidos ?> </br>
+    Email: <?= $user->email ?> </br>
+    </br>    
     <h3>Datos de envío</h3>
     Provincia: <?= $pedido->provincia ?> </br>
     Localidad: <?= $pedido->localidad ?> </br>
     Dirección: <?= $pedido->direccion ?> </br>
-
+    </br>
     <h3>Datos del pedido</h3>
     Estado: <?= Utils::showStatus($pedido->estado) ?> </br>
     Número de pedido: <?= $pedido->id ?> </br>
-    Dirección: <?= $pedido->direccion ?> </br>
     Total abonado:  $<?= $pedido->coste ?> </br>
     Productos: </br>
     <table>

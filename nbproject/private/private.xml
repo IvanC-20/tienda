@@ -6,6 +6,8 @@
             <file>file:/C:/xampp/htdocs/proyecto-tienda/controllers/CarritoController.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/assets/css/styles.css</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/views/pedido/detalle.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-tienda/controllers/PedidoController.php</file>
+            <file>file:/C:/xampp/htdocs/proyecto-tienda/models/pedido.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/views/layout/sidebar.php</file>
             <file>file:/C:/xampp/htdocs/proyecto-tienda/views/carrito/index.php</file>
         </group>

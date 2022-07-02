@@ -87,6 +87,12 @@ class pedidoController{
             //sacar los productos
             $pedido_productos = new Pedido();
             $productos = $pedido_productos->getProductosByPedido($pedido->id);
+            
+             //sacar el usuario
+            $pedido_usuario = new Pedido();
+            $user = $pedido_usuario->getDataUserByPedido($pedido->id);
+            //var_dump($user);
+            //die();
             require_once 'views/pedido/detalle.php';
          }else{
              header("Location:".base_url."pedido/misPedidos");

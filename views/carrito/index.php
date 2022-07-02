@@ -14,7 +14,13 @@
 
             <td> <a href="<?= base_url ?>producto/ver&id=<?=$producto->id?>"> <?= $producto->nombre ?></td></a>
             <td><?= $producto->precio ?></td>
-            <td><?= $elemento['unidades'] ?></td>
+            <td> 
+                    <?= $elemento['unidades'] ?>
+                <div class="updown-unidades">
+                    <a align="center" href="<?=base_url?>carrito/down&index=<?=$indice?>" class="button">-</a>
+                    <a align="center" href="<?=base_url?>carrito/up&index=<?=$indice?>" class="button">+</a>
+                </div>
+            </td>
             <td><?php if ($producto->imagen != null): ?>
                 <img src="<?= base_url ?>uploads/images/<?= $producto->imagen ?>" class="img_carrito"/>
                     <?php else: ?>
