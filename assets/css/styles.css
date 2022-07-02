@@ -1,4 +1,4 @@
-F/* Generales  */
+/* Generales  */
 *{
     padding: 0px;
     margin: 0px;
@@ -404,13 +404,28 @@ td{
 /* Carrito */
 
 .total-carrito{
-    width: 295px;
+    width: 315px;
     float: right;
-    display: block;
+    
 }
 
 .total-carrito h3{
     float: left;
+    display: block;
+    margin-top: 20px;
+}
+
+.delete-carrito{
+    width: 295px;
+    float: left;
+    
+}
+
+.button-delete{
+    float: left;
+    width: 100px;
+    text-align: center;
+    margin-top: 15px;
 }
 
 .button-pedido{
@@ -419,3 +434,9 @@ td{
     text-align: center;
     margin-top: 15px;
 }    
+
+.button-carrito{
+    width: 70px;
+    margin: 0px auto;
+    text-align: center;
+}
