@@ -131,6 +131,13 @@ class productoController{
         
         header("Location:".base_url."producto/gestion");
     }
+    
+    public function actualizarStock($id, $unidades) {
+        Utils::isUser();
+        $producto = new Producto();
+        $producto->setId($id);
+        $actualizar = $producto->updateStock($unidades);
+    }
        
 }//fin clase productoController
 

@@ -157,8 +157,18 @@ class Producto{
         return $result;
     }
     
-    public function editar() {
-       // $sql = "UPDATE productos SET categoria_id = '{$this->setCategoria_id()}'";
+    public function updateStock($unidades) {
+       $sql = "UPDATE productos SET stock = {$this->getStock()} - $unidades"
+             ." WHERE id = {$this->getId}";
+             
+       $update = $this->db->query($sql);
+       
+       $result = false;
+       
+        if($update){
+            $result = true;
+        }
+        return $result;
     }
     
 }

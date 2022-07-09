@@ -5,6 +5,7 @@
             <th>Nombre</th>
             <th>Precio</th>
             <th>Unidades</th>
+            <th>Stock</th>
             <th>Imagen</th>
             <th>Eliminar</th>
         </tr>
@@ -16,10 +17,21 @@
             <td><?= $producto->precio ?></td>
             <td> 
                     <?= $elemento['unidades'] ?>
+                <?php if($elemento['unidades']<= ($producto->stock - 1)): ?>
                 <div class="updown-unidades">
                     <a align="center" href="<?=base_url?>carrito/down&index=<?=$indice?>" class="button">-</a>
                     <a align="center" href="<?=base_url?>carrito/up&index=<?=$indice?>" class="button">+</a>
                 </div>
+                <?php else: ?>
+                <div class="updown-unidades">
+                    <a align="center" href="<?=base_url?>carrito/down&index=<?=$indice?>" class="button">-</a>
+                    <a align="center" href="#" class="button button-red">+</a>
+                    <p style="color:gray">Stop stock</p>
+                </div>
+                <?php endif;?>
+            </td>
+            <td>
+                <?= $producto->stock ?>
             </td>
             <td><?php if ($producto->imagen != null): ?>
                 <img src="<?= base_url ?>uploads/images/<?= $producto->imagen ?>" class="img_carrito"/>

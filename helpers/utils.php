@@ -100,4 +100,6 @@ class Utils{
         return $estado;
     }
     
+    
+    
 }//fin clase Utils
