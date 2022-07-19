@@ -28,7 +28,7 @@
                     <a align="center" href="#" class="button button-red">+</a>
                     <p style="color:gray">Stop stock</p>
                 </div>
-                <?php endif;?>
+                <?php endif; ?>
             </td>
             <td>
                 <?= $producto->stock ?>

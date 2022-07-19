@@ -27,7 +27,6 @@
                         <td> <a href="<?= base_url ?>producto/ver&id=<?= $prod->id ?>"> <?= $prod->nombre ?></td></a>
                         <td><?= $prod->precio ?></td>
                         <td><?= $prod->unidades ?></td>
-                        
                         <td><?php if ($prod->imagen != null): ?>
                                 <img src="<?= base_url ?>uploads/images/<?= $prod->imagen ?>" class="img_carrito"/>
                             <?php else: ?>
@@ -37,8 +36,8 @@
                  <?php endwhile; ?>  </br> 
             </table>
     <?php 
-          require_once '//controllers/ProductoController.php';//ver ruta
-          actualizarStock($prod->id, $prod->unidades);
+          
+    Utils::deleteSession('carrito');      
     ?>      
     <?php endif; ?>
 <?php elseif(isset($_SESSION['pedido']) && ($_SESSION['pedido'] != 'complete')): ?>

@@ -15,7 +15,7 @@
         <label for="direccion" >Dirección:</label>
         <input type="text" name="direccion" required />
         
-        <input type="submit" value="Confirmar Pedido"/>
+        <input type="submit" value="Confirmar Pedido" name="sent"/>
         
     </form>
 <?php else : ?>

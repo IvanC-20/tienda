@@ -191,7 +191,22 @@ class Pedido{
         }
         return $result;
     }
+    
+    public function updateStock($id, $newStock) {
+       $sql = "UPDATE productos SET stock = {$newStock} "
+             ." WHERE id = {$id};";
+     //var_dump($sql);
+     //die();
+       $update = $this->db->query($sql);
+        
+       $result = false;
+       
+        if($update){
+            $result = true;
+        }
+        return $result;
+    }
       
-}
+}//fin clase Pedido
 
     

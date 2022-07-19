@@ -8,6 +8,21 @@ class pedidoController{
     }
     
     public function add() {
+        
+       if(isset($_POST['sent'])){
+           
+           foreach ($_SESSION['carrito'] as $indice => $elemento) {
+               $stock = new Pedido();
+               $producto = $elemento['producto'];
+               if($elemento['unidades'] > 1){
+                   $newStock = $producto->stock - $elemento['unidades'];
+               }else{
+                   $newStock = $producto->stock - 1;
+               }
+               $stock->updateStock($producto->id, $newStock );
+           }
+       } 
+        
        if(isset($_SESSION['identity'])){
            //Guardar en db
             $usuario_id = $_SESSION['identity']->id;                     
@@ -61,6 +76,7 @@ class pedidoController{
             $productos = $pedido_productos->getProductosByPedido($pedido->id);
              
         }
+        
         require_once 'views/pedido/confirmado.php';    
      }
      

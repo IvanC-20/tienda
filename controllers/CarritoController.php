@@ -86,4 +86,4 @@ class carritoController{
         //me queda el sidebar carrito cargado, estaría mal hecho (solo cambia la pantalla central)
         header("Location:".base_url."carrito/index");
     }
-}
+}//fin clase carritoController

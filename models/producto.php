@@ -157,12 +157,15 @@ class Producto{
         return $result;
     }
     
-    public function updateStock($unidades) {
+    
+    
+   /* public function updateStock($unidades) {
        $sql = "UPDATE productos SET stock = {$this->getStock()} - $unidades"
-             ." WHERE id = {$this->getId}";
-             
+             ." WHERE id = {$this->getId()};";
+     var_dump($sql);
+     die();
        $update = $this->db->query($sql);
-       
+        
        $result = false;
        
         if($update){
@@ -170,6 +173,6 @@ class Producto{
         }
         return $result;
     }
-    
+    */
 }
 
